@@ -15,10 +15,10 @@ public class Catalogue {
     public List<Book> defaultCatalogueView(){
         return catalogueService.getDefaultCatalogue();
     }
-
+    /*
     @RequestMapping("/catalogue/{userSearchGenre}")
     public Book searchGenre(@PathVariable String userSearchGenre){
         return catalogueService.searchGenre(userSearchGenre);
-    }
+    }*/
 
 }

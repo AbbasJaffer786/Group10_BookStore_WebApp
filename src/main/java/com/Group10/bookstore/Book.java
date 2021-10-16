@@ -1,5 +1,7 @@
 package com.Group10.bookstore;
 
+import com.Group10.bookstore.Catalogue.ReviewRatingService;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +15,7 @@ public class Book {
     private String genre;
     private Integer publishYR;
     private Integer salesCNT;
+
 
     /*
      * No argument constructor.
@@ -99,4 +102,6 @@ public class Book {
     public void setSalesCNT(Integer salesCNT) {
         this.salesCNT = salesCNT;
     }
+
+
 }

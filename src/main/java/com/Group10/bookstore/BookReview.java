@@ -3,9 +3,9 @@ package com.Group10.bookstore;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
-import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.ZonedDateTime;
 
 @Entity(name = "BookReviews")
 @IdClass(BookReviewKey.class)
@@ -14,13 +14,15 @@ public class BookReview implements Serializable {
     @Id
     private String reviewISBN;
 
-    private String bookReview;
-    private int bookRating;
-
     @Id
     private String reviewer;
 
-    private Date timestamp;
+    private String bookReview;
+    private ZonedDateTime reviewTimeStamp;
+    private int bookRating;
+    private ZonedDateTime ratingTimeStamp;
+    @Transient
+    private Double avgBookRating;
 
 
     /*
@@ -30,12 +32,15 @@ public class BookReview implements Serializable {
 
     }
 
-    public BookReview(String reviewISBN, String bookReview, int bookRating, String reviewer, Date timeStamp){
+
+
+    public BookReview(String reviewISBN, String reviewer, String bookReview, ZonedDateTime reviewTimeStamp, int bookRating, ZonedDateTime ratingTimeStamp ){
         this.reviewISBN = reviewISBN;
-        this.bookReview = bookReview;
-        this.bookRating = bookRating;
         this.reviewer = reviewer;
-        this.timestamp = timeStamp;
+        this.bookReview = bookReview;
+        this.reviewTimeStamp = reviewTimeStamp;
+        this.bookRating = bookRating;
+        this.ratingTimeStamp = ratingTimeStamp;
     }
 
     public String getBookReview() {
@@ -70,12 +75,24 @@ public class BookReview implements Serializable {
         this.reviewISBN = reviewISBN;
     }
 
-    public Date getTimestamp() {
-        return timestamp;
-    }
+    public ZonedDateTime getReviewTimeStamp() { return reviewTimeStamp; }
 
-    public void setTimestamp(Date timestamp) {
-        this.timestamp = timestamp;
+    public void setReviewTimeStamp(ZonedDateTime reviewTimeStamp) { this.reviewTimeStamp = reviewTimeStamp; }
+
+    public ZonedDateTime getRatingTimeStamp() { return ratingTimeStamp; }
+
+    public void setRatingTimeStamp(ZonedDateTime ratingTimeStamp) { this.ratingTimeStamp = ratingTimeStamp; }
+
+    public Double getAvgBookRating() {
+        return avgBookRating;
+    }
+/*
+    public void setAvgBookRating(Double avgBookRating) {
+        this.avgBookRating = avgBookRating;
+    }
+*/
+    public void setAvgBookRating(Double avgRating) {
+        this.avgBookRating = avgRating;
     }
 }
 
