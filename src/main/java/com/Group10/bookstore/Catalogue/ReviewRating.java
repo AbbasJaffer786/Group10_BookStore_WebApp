@@ -35,6 +35,15 @@ public class ReviewRating {
         return reviewRatingService.searchReviewISBN(reviewISBN);
     }
 
+    @RequestMapping("/catalogue/{reviewISBN}/reviewAll/Asc")
+    public List<BookReview> searchReviewISBNAsc(@PathVariable String reviewISBN){
+        return reviewRatingService.searchReviewISBNAsc(reviewISBN);
+    }
+
+    @RequestMapping("/catalogue/{reviewISBN}/reviewAll/Desc")
+    public List<BookReview> searchReviewISBNDesc(@PathVariable String reviewISBN){
+        return reviewRatingService.searchReviewISBNDesc(reviewISBN);
+    }
 
     @RequestMapping("/catalogue/{reviewUser}")
     public List<BookReview> searchReviewUser(@PathVariable String reviewUser){

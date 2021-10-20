@@ -24,6 +24,12 @@ public interface ReviewRatingRepository extends CrudRepository<BookReview, BookR
     @Query("select r from BookReviews r where r.reviewISBN = :reviewISBN AND r.reviewer = :reviewer")
     List<BookReview> findByISBNUser(String reviewISBN, String reviewer);
 
+    @Query("select r from BookReviews r where r.reviewISBN = :reviewISBN order by r.bookRating ASC")
+    List<BookReview> findAllByreviewISBNAsc(String reviewISBN);
+
+    @Query("select r from BookReviews r where r.reviewISBN = :reviewISBN order by r.bookRating DESC")
+    List<BookReview> findAllByreviewISBNDesc(String reviewISBN);
+
     //List<BookReview> findAllByreviewer(@Param("reviewISBN") String name);
 
 }
