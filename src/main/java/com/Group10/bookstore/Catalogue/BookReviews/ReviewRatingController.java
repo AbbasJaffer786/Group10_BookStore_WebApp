@@ -1,6 +1,5 @@
-package com.Group10.bookstore.Catalogue;
+package com.Group10.bookstore.Catalogue.BookReviews;
 
-import com.Group10.bookstore.BookReview;
 import com.Group10.bookstore.Exception.BookReviewMissingException;
 import com.Group10.bookstore.Exception.DuplicateBookReviewException;
 import com.Group10.bookstore.Exception.InvalidBookRatingException;
@@ -8,11 +7,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import java.util.Map;
 
 
 @RestController
-public class ReviewRating {
+public class ReviewRatingController {
 
     @Autowired
     private ReviewRatingService reviewRatingService;

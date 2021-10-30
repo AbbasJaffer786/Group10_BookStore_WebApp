@@ -1,5 +1,6 @@
-package com.Group10.bookstore;
+package com.Group10.bookstore.Users;
 
+import com.Group10.bookstore.Users.User;
 import org.springframework.web.bind.annotation.*;
 
 

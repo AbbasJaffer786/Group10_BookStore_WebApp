@@ -1,13 +1,11 @@
-package com.Group10.bookstore.Catalogue;
+package com.Group10.bookstore.Catalogue.BookReviews;
 
-import com.Group10.bookstore.BookReview;
-import com.Group10.bookstore.BookReviewKey;
+import com.Group10.bookstore.Catalogue.BookReviews.BookReview;
+import com.Group10.bookstore.Catalogue.BookReviews.BookReviewKey;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
 
 import java.util.List;
-import java.util.Map;
 
 public interface ReviewRatingRepository extends CrudRepository<BookReview, BookReviewKey> {
 

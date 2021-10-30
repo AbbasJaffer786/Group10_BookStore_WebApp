@@ -1,4 +1,6 @@
-package com.Group10.bookstore;
+package com.Group10.bookstore.Catalogue.Books;
+
+import com.Group10.bookstore.Catalogue.Authors.Author;
 
 import java.sql.ResultSet;
 import javax.persistence.Entity;
@@ -8,8 +10,8 @@ import javax.persistence.Table;
 import java.util.List;
 
 
-@Entity
-@Table(name = "book")
+@Entity(name = "Books")
+
 public class Book {
 
 	@Id
@@ -17,7 +19,7 @@ public class Book {
     private String name;
     private String description;
     private Double price;
-    private String author;
+    private int authorID;
     private String genre;
     private Integer publishYR;
     private Integer salesCNT;
@@ -35,12 +37,12 @@ public class Book {
 
 
 
-    public Book(String isbn, String name, String description, Double price, String author, String genre, Integer publishYR, Integer salesCNT) {
+    public Book(String isbn, String name, String description, Double price, Integer authorID, String genre, Integer publishYR, Integer salesCNT) {
         this.isbn = isbn;
         this.name = name;
         this.description = description;
         this.price = price;
-        this.author = author;
+        this.authorID = authorID;
         this.genre = genre;
         this.publishYR = publishYR;
         this.salesCNT = salesCNT;
@@ -76,14 +78,6 @@ public class Book {
         this.price = price;
     }
 
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
     public String getGenre() {
         return genre;
     }
@@ -106,5 +100,13 @@ public class Book {
 
     public void setSalesCNT(Integer salesCNT) {
         this.salesCNT = salesCNT;
+    }
+
+    public int getAuthorID() {
+        return authorID;
+    }
+
+    public void setAuthorID(int authorID) {
+        this.authorID = authorID;
     }
 }

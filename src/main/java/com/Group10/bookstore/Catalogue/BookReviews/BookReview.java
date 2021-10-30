@@ -1,4 +1,4 @@
-package com.Group10.bookstore;
+package com.Group10.bookstore.Catalogue.BookReviews;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

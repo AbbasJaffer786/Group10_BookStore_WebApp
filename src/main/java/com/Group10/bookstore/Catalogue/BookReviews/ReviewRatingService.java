@@ -1,24 +1,10 @@
-package com.Group10.bookstore.Catalogue;
+package com.Group10.bookstore.Catalogue.BookReviews;
 
-import com.Group10.bookstore.Book;
-import com.Group10.bookstore.BookReview;
-import com.Group10.bookstore.BookReviewKey;
-import org.apache.tomcat.jni.Time;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import sun.util.calendar.BaseCalendar;
-import sun.util.calendar.LocalGregorianCalendar;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import java.sql.Timestamp;
 import java.time.ZonedDateTime;
 import java.util.*;
-
-import static org.springframework.boot.system.SystemProperties.get;
 
 @Service
 public class ReviewRatingService {
