@@ -86,8 +86,8 @@ public class ReviewRatingService {
         //return reviewArchive;
     }
 
-    public List<BookReview> searchReviewISBNUser(String reviewISBN, String reviewer) {
-        List<BookReview> reviewArchive = new ArrayList<>();
+    public BookReview searchReviewISBNUser(String reviewISBN, String reviewer) {
+        //List<BookReview> reviewArchive = new ArrayList<>();
         return reviewRepository.findByISBNUser(reviewISBN, reviewer);
     }
 

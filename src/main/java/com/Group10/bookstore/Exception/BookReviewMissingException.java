@@ -1,12 +1,12 @@
 package com.Group10.bookstore.Exception;
 
-public class DuplicateBookReviewException extends RuntimeException {
+public class BookReviewMissingException extends RuntimeException {
 
-    public DuplicateBookReviewException(String message) {
+    public BookReviewMissingException(String message) {
         super(message);
     }
 
-    public DuplicateBookReviewException(String message, Throwable cause) {
+    public BookReviewMissingException(String message, Throwable cause) {
         super(message, cause);
     }
 }

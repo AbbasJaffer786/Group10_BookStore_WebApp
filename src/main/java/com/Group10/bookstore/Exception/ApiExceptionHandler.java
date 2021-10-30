@@ -11,8 +11,14 @@ import java.time.ZonedDateTime;
 @ControllerAdvice
 public class ApiExceptionHandler {
 
-    @ExceptionHandler(value = {InvalidBookRatingException.class, DuplicateBookReviewException.class})
+    @ExceptionHandler(value = {InvalidBookRatingException.class})
     public ResponseEntity<Object> handleApiRequestException(InvalidBookRatingException e){
+        ApiException apiException = new ApiException(e.getMessage(), HttpStatus.BAD_REQUEST, ZonedDateTime.now());
+
+        return new ResponseEntity<>(apiException, HttpStatus.BAD_REQUEST);
+    }
+    @ExceptionHandler(value = {DuplicateBookReviewException.class})
+    public ResponseEntity<Object> handleApiRequestException(DuplicateBookReviewException e){
         ApiException apiException = new ApiException(e.getMessage(), HttpStatus.BAD_REQUEST, ZonedDateTime.now());
 
         return new ResponseEntity<>(apiException, HttpStatus.BAD_REQUEST);

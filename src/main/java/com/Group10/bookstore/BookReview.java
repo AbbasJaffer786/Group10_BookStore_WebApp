@@ -94,6 +94,14 @@ public class BookReview implements Serializable {
     public void setAvgBookRating(Double avgRating) {
         this.avgBookRating = avgRating;
     }
+
+    public boolean equals(BookReview testBook)
+    {
+        if (this.reviewISBN == testBook.getReviewISBN() && this.reviewer == testBook.reviewer)
+            return true;
+        else
+            return false;
+    }
 }
 
 
