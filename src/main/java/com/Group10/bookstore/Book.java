@@ -1,12 +1,18 @@
 package com.Group10.bookstore;
 
-import com.Group10.bookstore.Catalogue.ReviewRatingService;
+import java.sql.ResultSet;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-import java.util.ArrayList;
 import java.util.List;
 
+
+@Entity
+@Table(name = "book")
 public class Book {
 
+	@Id
     private String isbn;
     private String name;
     private String description;
@@ -15,7 +21,6 @@ public class Book {
     private String genre;
     private Integer publishYR;
     private Integer salesCNT;
-
 
     /*
      * No argument constructor.
@@ -102,6 +107,4 @@ public class Book {
     public void setSalesCNT(Integer salesCNT) {
         this.salesCNT = salesCNT;
     }
-
-
 }

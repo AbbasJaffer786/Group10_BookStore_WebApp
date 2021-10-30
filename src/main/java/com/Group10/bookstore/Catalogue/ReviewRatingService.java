@@ -59,6 +59,15 @@ public class ReviewRatingService {
         //return reviewArchive;
     }
 
+    private List<BookReview> reviewISBNListAsc(String reviewISBN) {
+        List<BookReview> reviewArchive = new ArrayList<>();
+        return reviewRepository.findAllByreviewISBNAsc(reviewISBN);
+    }
+
+    private List<BookReview> reviewISBNListDesc(String reviewISBN) {
+        List<BookReview> reviewArchive = new ArrayList<>();
+        return reviewRepository.findAllByreviewISBNDesc(reviewISBN);
+    }
 
     public List<BookReview> searchReviewISBN(String reviewISBN){
         List<BookReview> reviewArchive = reviewISBNList(reviewISBN);
@@ -75,6 +84,38 @@ public class ReviewRatingService {
 
         return reviewArchive;
 
+    }
+
+    public List<BookReview> searchReviewISBNAsc(String reviewISBN) {
+        List<BookReview> reviewArchive = reviewISBNListAsc(reviewISBN);
+
+        double avgReview = 0;
+
+        for(int i = 0; i < reviewArchive.size(); i++)
+            avgReview += reviewArchive.get(i).getBookRating();
+
+        avgReview /= reviewArchive.size();
+
+        for(int i = 0; i < reviewArchive.size(); i++)
+            reviewArchive.get(i).setAvgBookRating(avgReview);
+
+        return reviewArchive;
+    }
+
+    public List<BookReview> searchReviewISBNDesc(String reviewISBN) {
+        List<BookReview> reviewArchive = reviewISBNListDesc(reviewISBN);
+
+        double avgReview = 0;
+
+        for(int i = 0; i < reviewArchive.size(); i++)
+            avgReview += reviewArchive.get(i).getBookRating();
+
+        avgReview /= reviewArchive.size();
+
+        for(int i = 0; i < reviewArchive.size(); i++)
+            reviewArchive.get(i).setAvgBookRating(avgReview);
+
+        return reviewArchive;
     }
 
 
@@ -127,6 +168,7 @@ public class ReviewRatingService {
             }
         }*/
     }
+
 
 
 }
