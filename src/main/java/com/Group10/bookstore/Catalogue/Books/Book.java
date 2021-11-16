@@ -1,4 +1,4 @@
-package com.Group10.bookstore;
+package com.Group10.bookstore.Catalogue.Books;
 
 import java.sql.ResultSet;
 import javax.persistence.Entity;
