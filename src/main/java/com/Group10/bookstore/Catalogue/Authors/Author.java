@@ -1,32 +1,29 @@
-package com.Group10.bookstore.Catalogue.Authors;
+package com.Group10.bookstore;
 
+import java.sql.ResultSet;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.IdClass;
-import java.util.Date;
+import javax.persistence.Table;
 
-@Entity(name="Authors")
-//@IdClass(AuthorKey.class)
+@Entity
+@Table(name="author")
 public class Author {
 
 	@Id
-    private int authorID;
 	private String firstName;
     private String lastName;
     private String bio;
     private String publisher;
-    private Date dateOfBirth;
     
     public Author() {
     	
     }
     
-    public Author(String firstName, String lastName, String bio, String publisher, Date dateOfBirth) {
+    public Author(String firstName, String lastName, String bio, String publisher) {
     	this.firstName = firstName;
     	this.lastName = lastName;
     	this.bio = bio;
     	this.publisher = publisher;
-    	this.dateOfBirth = dateOfBirth;
     }
     
     public String getFirstName() {return firstName;}
@@ -44,12 +41,5 @@ public class Author {
     public String getPublisher() {return publisher;}
     
     public void setPublisher(String publisher) {this.publisher = publisher;}
-
-    public Date getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
+    
 }
