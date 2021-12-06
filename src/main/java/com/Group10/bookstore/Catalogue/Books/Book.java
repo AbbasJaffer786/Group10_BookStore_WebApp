@@ -21,7 +21,7 @@ public class Book {
     private String genre;
     private Integer publishYR;
     private Integer salesCNT;
-
+    private Integer ratingCNT;
     /*
      * No argument constructor.
      */
@@ -35,7 +35,7 @@ public class Book {
 
 
 
-    public Book(String isbn, String name, String description, Double price, String author, String genre, Integer publishYR, Integer salesCNT) {
+    public Book(String isbn, String name, String description, Double price, String author, String genre, Integer publishYR, Integer salesCNT, Integer ratingCNT) {
         this.isbn = isbn;
         this.name = name;
         this.description = description;
@@ -44,6 +44,8 @@ public class Book {
         this.genre = genre;
         this.publishYR = publishYR;
         this.salesCNT = salesCNT;
+        this.ratingCNT = ratingCNT;
+
     }
 
     public String getIsbn() { return isbn; }
@@ -107,4 +109,13 @@ public class Book {
     public void setSalesCNT(Integer salesCNT) {
         this.salesCNT = salesCNT;
     }
+
+	public Integer getRating() {
+		return ratingCNT;
+	}
+
+	public void setRatingCNT(Integer ratingCNT) {
+		this.ratingCNT = ratingCNT;
+	}
+
 }

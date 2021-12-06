@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,6 +32,11 @@ public class BookController {
 		return service.getBooksByTopSellers();
 	}
 	
+	@GetMapping("/retrieveBooksByRating")
+	public List<Book> retrieveBooksByRating() {
+		return service.getBooksByRating();
+	}
+	
 	@GetMapping("/retrieveBookByIsbn/{isbn}")
 	public Book retrieveBookByIsbn(@PathVariable String isbn) {
 		return service.getBookByIsbn(isbn);
@@ -45,6 +51,8 @@ public class BookController {
 	public List<Book> retrieveBooksByGenre(@PathVariable String genre){
 		return service.getBooksByGenre(genre);
 	}
+	
+	
 	
 	@PostMapping(path = "/createBook", consumes = MediaType.APPLICATION_JSON_VALUE, 
 	        produces = MediaType.APPLICATION_JSON_VALUE)
